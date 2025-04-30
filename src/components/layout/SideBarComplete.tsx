@@ -1,52 +1,49 @@
-import { Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider } from "@/components/ui/sidebar"
+import { Sidebar, SidebarContent, SidebarHeader, SidebarMenuButton, SidebarProvider, useSidebar } from "@/components/ui/sidebar"
 import Topbar from "./Topbar"
 import { ReactNode } from "react"
-import { Link } from "react-router-dom"
-import { HomeIcon, UserIcon, FolderIcon } from "lucide-react"
+import { SidebarIcon } from "@/components/layout/SideBarIcon"
+import SidebarFooterComplete from "./SidebarFooterComplete"
+import SidebarMenuComplete from "./SidebarMenuComplete"
+import PortfolioIcon from "@/assets/portfolio-svgrepo-com.svg"
+import { SidebarLogo } from "./SidebarLogo"
 
 type SidebarCompleteProps = {
     children: ReactNode
 }
 
 const SideBarComplete = ({ children }: SidebarCompleteProps) => {
+   /*  const { state } = useSidebar() */
+
     return (
         <>
-            <SidebarProvider>
+            <SidebarProvider
+                style={{
+                    "--sidebar-width": "15rem",
+                    "--sidebar-width-mobile": "15rem",
+                }}
+            >
                 <div className="flex min-h-screen">
-                    <Sidebar>
+                    <Sidebar
+                        collapsible="icon"
+                        variant="floating"
+                        className="group/sidebar"
+                    >
                         <SidebarHeader>
-                            <h1 className="text-xl font-bold">LOGO</h1>
+                            <SidebarMenuButton
+                                size="lg"
+                                className="bg-gray-300 flex justify-center transition-all p-5"
+                            >
+                                <SidebarLogo/>
+                               {/*  {state === "collapsed"
+                                ? <SidebarIcon icon={PortfolioIcon}/> 
+                                : <span className="font-bold text-gray-500 p-0.5 text-lg">VMD</span>}
+                                 */}
+                            </SidebarMenuButton>
                         </SidebarHeader>
                         <SidebarContent>
-                            <SidebarMenu>
-                                <SidebarMenuItem>
-                                    <SidebarMenuButton asChild>
-                                        <Link to="/" className="flex items-center gap-2">
-                                            <HomeIcon className="w-4 h-4" />
-                                            <span>
-                                                Home
-                                            </span>
-                                        </Link>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                                <SidebarMenuItem>
-                                    <SidebarMenuButton asChild>
-                                        <Link to="/about">
-                                            <UserIcon className="w-4 h-4" />
-                                            <span>About</span>
-                                        </Link>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                                <SidebarMenuItem>
-                                    <SidebarMenuButton asChild>
-                                        <Link to="/works">
-                                        <FolderIcon className="w-4 h-4" />
-                                            <span>Works</span>
-                                        </Link>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                            </SidebarMenu>
+                            <SidebarMenuComplete />
                         </SidebarContent>
+                        <SidebarFooterComplete />
                     </Sidebar>
                     <div className="flex flex-col flex-1">
                         <Topbar />
