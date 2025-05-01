@@ -1,15 +1,15 @@
 
-import SideBarComplete from "./components/layout/SideBarComplete"
 
 import { AppRouter } from "@/router"
+import Navbar from "./components/layout/navbar"
+
 
 
 function App() {
   return (
     <>
-      <SideBarComplete>
-        <AppRouter/>
-      </SideBarComplete>
+      <Navbar/>
+      <AppRouter />
     </>
   )
 }

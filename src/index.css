@@ -119,3 +119,6 @@
   }
 }
 
+header.scrolled {
+  @apply bg-white/80 backdrop-blur shadow-md border-b py-2;
+}
