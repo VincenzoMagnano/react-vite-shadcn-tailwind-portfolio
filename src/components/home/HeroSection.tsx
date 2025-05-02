@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
-import { SplashCursor } from "../ui/splash-cursor";
+import BackgroundSVG from "../background/BackgroundSVG";
 
 const HeroSection = () => {
   const heroRef = useRef(null);
@@ -34,7 +34,7 @@ const HeroSection = () => {
           {
             y: 0,
             opacity: 1,
-            duration: 1,
+            duration: 0.6,
             ease: "power4.out",
           },
           "-=0.5"
@@ -49,26 +49,34 @@ const HeroSection = () => {
       <section
         id="home"
         ref={heroRef}
-        className="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-32 min-h-screen bg-gray-200"
+        className="min-h-screen w-full flex items-stretch overflow-hidden pt-16 md:pt-0"
       >
-        <h1
-          ref={titleRef}
-          className="text-5xl md:text-6xl font-extrabold text-gray-900"
+        <BackgroundSVG type="wavy"/>
+        <div
+          className="w-full md:w-1/2 flex flex-col justify-center  p-6 md:p-12 lg:p-16"
         >
-          Build digital solutions with mind, heart and code.
-        </h1>
-        <p ref={subtitleRef} className="text-xl mt-4 text-gray-600 max-w-2xl">
-          Passionate about crafting clean, functional and impactful user
-          experiences.
-        </p>
-        <button
-          ref={buttonRef}
-          className="mt-8 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition"
-        >
-          WORKS
-        </button>
+          <div>
+            <h1
+              ref={titleRef}
+              className="text-4xl sm:text-9xl md:text-6xl lg:text-7xl font-extrabold text-gray-800 leading-tight"
+            >
+              VINCENZO MAGNANO DEVELOPER
+            </h1>
+            <p
+              ref={subtitleRef}
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 mt-8"
+            >
+              Build digital solutions with mind, heart and code.
+            </p>
+            <button
+              ref={buttonRef}
+              className="mt-8 px-8 py-4 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition"
+            >
+              WORKS
+            </button>
+          </div>
+        </div>
       </section>
-        <SplashCursor />
     </>
   );
 };
