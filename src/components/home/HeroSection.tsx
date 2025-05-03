@@ -75,21 +75,23 @@ const HeroSection = () => {
       <section
         id="home"
         ref={heroRef}
-        className="min-h-screen w-full flex flex-col md:flex-row items-stretch overflow-hidden pt-16 md:pt-0"
+        className="min-h-screen w-full flex flex-col lg:flex-row items-stretch overflow-hidden pt-20 relative"
       >
         <BackgroundSVG type="wavy" />
-        <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-center items-center p-6 md:p-12 lg:p-16">
-          <div id="title-container" className="hero-title-container">
+        <div className="w-full md:w-3/5 flex flex-col md:flex-row justify-center items-center p-6 md:p-12 lg:p-16">
+          <div id="title-container" className="flex flex-col items-center md:items-start">
             <h1
               ref={titleRef}
-              className="text-4xl sm:text-9xl md:text-6xl lg:text-9xl font-extrabold text-gray-800 leading-tight"
+              className="text-4xl sm:text-4xl md:text-8xl  font-extrabold text-gray-800 leading-tight"
             >
-              {"VINCENZO MAGNANO DEVELOPER".split("").map((char, index) => (
+              {"<VINCENZO> </MAGNANO> /DEVELOPER/ <VINCENZO> </MAGNANO> /DEVELOPER/".split("").map((char, index) => (
                 <span key={index} className="title-char inline-block">
                   {char === " " ? "\u00A0" : char}
                 </span>
               ))}
+             
             </h1>
+
             <p
               ref={subtitleRef}
               className="text-lg sm:text-xl md:text-2xl text-gray-600 mt-8"
@@ -98,19 +100,19 @@ const HeroSection = () => {
             </p>
             <button
               ref={buttonRef}
-              className="mt-8 px-8 py-4 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition text-3xl"
+              className="mt-8 px-8 py-4 bg-gray-700 text-white rounded-full hover:bg-gray-500 transition text-3xl w-40"
             >
               WORKS
             </button>
           </div>
         </div>
-        <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 lg:p-16 z-10 flex-col md:flex-row">
-          <div className="bg-gray-700 p-8 rounded-xl ">
+        <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12  lg:p-16 z-10 flex-col md:flex-row">
+          <div className="p-3 rounded-xl backdrop-blur-sm bg-transparent border">
             <AnimatedCode
-              lines={["function hello() {", '  console.log("Hello!")', "}"]}
+              lines={["function hello() {", '  console.log("Hello!")', "}",' hello()'," "]}
               delay={1}
               speed={0.08}
-              textColor="text-gray-400"
+              textColor="text-gray-800"
             />
           </div>
         </div>

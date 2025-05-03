@@ -151,12 +151,7 @@
   }
 }
 
-.hero-title-container {
-  width: 100%;
-  text-align: left;
-  font-family: 'Rajdhani', sans-serif;
-  
-}
+
 
 header.scrolled {
   @apply bg-white/80 backdrop-blur shadow-md border-b py-2;

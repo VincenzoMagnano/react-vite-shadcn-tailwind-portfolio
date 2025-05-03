@@ -50,7 +50,7 @@ const Navbar = () => {
         }`}
       >
        <div className="text-2xl md:text-4xl font-bold hover:opacity-80 transition ml-3">
-          <a href="#home">VMD</a>
+          <a href="#home">/VMD/</a>
         </div>
       
          <AnimatedNavbar />

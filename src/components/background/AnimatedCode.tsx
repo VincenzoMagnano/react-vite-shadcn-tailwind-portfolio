@@ -47,7 +47,7 @@ export default function AnimatedCode({
           ))}
           {/* Add cursor to last line only */}
           {i === lines.length - 1 && (
-            <span className="animate-pulse inline-block w-2 h-5 bg-gray-400 ml-1"></span>
+            <span className="animate-pulse inline-block w-2 h-5 md:h-10 bg-gray-800 ml-1"></span>
           )}
         </div>
       ))}
