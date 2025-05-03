@@ -1,15 +1,15 @@
-# 🚀 React + TypeScript + Vite + TailwindCSS + Shadcn + Three.js Starter
+# 🚀 React + TypeScript + Vite + TailwindCSS + Shadcn + GSAP + Three.js Starter
 
-Questo progetto fornisce una configurazione moderna e scalabile per sviluppare applicazioni React usando Vite, TypeScript, Tailwind CSS, Shadcn/UI per i componenti, Three.js per la grafica 3D e react-router-dom per il routing.
+Questo progetto fornisce una configurazione moderna e scalabile per sviluppare applicazioni React con animazioni fluide, UI componibile e grafica 3D interattiva.
 
 ## 📦 Stack Tecnologico
 
 - **React 18** + **TypeScript** + **Vite** ➔ frontend ultrarapido
-- **TailwindCSS 4** ➔ styling utility-first
-- **Shadcn/UI** ➔ component library moderna e componibile
-- **Three.js** ➔ grafica 3D interattiva
+- **TailwindCSS 4** ➔ styling utility-first con supporto a dark mode
+- **Shadcn/UI** ➔ component library accessibile e componibile
+- **GSAP** ➔ animazioni complesse e performanti (scroll, testo, hover)
 - **React Router DOM** ➔ gestione delle rotte client-side
-- **Lucide React** ➔ set di icone vettoriali moderne
+- **Lucide React** ➔ icone vettoriali moderne
 - **ESLint + Prettier** ➔ linting e formattazione del codice
 - **Alias @/** ➔ importazioni intelligenti dal `src/`
 
@@ -25,23 +25,23 @@ Questo progetto fornisce una configurazione moderna e scalabile per sviluppare a
     /layout        # Sidebar, Topbar, Footer, layout globale
     /ui            # Componenti Shadcn personalizzati
     /common        # Componenti riutilizzabili generici
+    /home          # Componenti della homepage (HeroSection, IntroSection, ecc.)
+    /background    # SVG animati, background dinamici, effetti grafici
   /hooks           # Custom React hooks
   /lib             # Helper functions, utilities
   /pages
-    /home          # HomePage
-    /about         # AboutPage
-    /works         # WorksPage (portfolio)
-    /scene         # 3D ScenePage
-  /scenes          # Three.js scene files
-  /styles          # Tailwind base styles
+    /home
+    /about
+    /works
+    /scene
+  /scenes          # Three.js scene files o spline loader
+  /styles          # File globali Tailwind
   App.tsx          # Componente root
   main.tsx         # Entry point principale
   router.tsx       # Definizione centralizzata delle rotte
 tailwind.config.js # Configurazione TailwindCSS
-vite.config.ts     # Configurazione Vite
+vite.config.ts     # Configurazione Vite + alias
 tsconfig.json      # Configurazione TypeScript
-package.json       # Dipendenze npm
-```
 
 ---
 
