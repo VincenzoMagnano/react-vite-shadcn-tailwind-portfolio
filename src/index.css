@@ -17,11 +17,11 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+  --secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -128,15 +128,78 @@
   --brand: hsl(50 100% 50%);
 }
 
+.circuit-line {
+  animation: circuit-animation 4s linear infinite;
+}
+
+.wavy-animation {
+  animation: wavy-move 6s ease-in-out infinite alternate;
+}
+.wavy-animation2 {
+  animation: wavy-move 7s ease-in-out infinite alternate;
+}
+.wavy-animation3 {
+  animation: wavy-move 4s ease-in-out infinite alternate;
+}
+
+@keyframes wavy-move {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+.hero-title-container {
+  width: 100%;
+  text-align: left;
+  font-family: 'Rajdhani', sans-serif;
+  
+}
+
+header.scrolled {
+  @apply bg-white/80 backdrop-blur shadow-md border-b py-2;
+}
+
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Rajdhani', sans-serif;
   }
 }
 
-header.scrolled {
-  @apply bg-white/80 backdrop-blur shadow-md border-b py-2;
+.circuit-line {
+  animation: circuit-animation 4s linear infinite;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+#navMenu:hover {
+  transform: scale(1.1);
+  background-color: #d6d6d6;
+  color: white;
+}
+
+#navMenu li a:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
 }

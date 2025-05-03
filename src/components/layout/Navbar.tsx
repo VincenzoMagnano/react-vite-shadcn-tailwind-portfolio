@@ -1,11 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedNavbar from "./AnimatedNavbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
@@ -48,54 +49,14 @@ const Navbar = () => {
           scrolled ? "py-2" : "py-6"
         }`}
       >
-        <div className="text-xl md:text-4xl font-bold hover:opacity-80 transition ml-3">
+       <div className="text-2xl md:text-4xl font-bold hover:opacity-80 transition ml-3">
           <a href="#home">VMD</a>
         </div>
-        <ul className="hidden md:flex gap-6 text-sm font-medium text-gray-700 bg-gray-400 p-5 rounded-4xl">
-          <li>
-            <a href="#about" className="hover:text-black transition">
-              ABOUT
-            </a>
-          </li>
-          <li>
-            <a href="#works" className="hover:text-black transition">
-              WORKS
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-black transition">
-              CONTACT
-            </a>
-          </li>
-        </ul>
-        <button
-          className="md:hidden text-2xl"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          ☰
-        </button>
+      
+         <AnimatedNavbar />
       </nav>
-      {isMenuOpen && (
-        <div className="md:hidden bg-white w-full absolute top-full left-0 shadow-md z-40">
-          <ul className="flex flex-col items-center gap-4 p-4 text-sm font-medium text-gray-700">
-            <li>
-              <a href="#about" onClick={() => setIsMenuOpen(false)}>
-                ABOUT
-              </a>
-            </li>
-            <li>
-              <a href="#works" onClick={() => setIsMenuOpen(false)}>
-                WORKS
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
-                CONTACT
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+  
+     
     </header>
   );
 };
