@@ -50,9 +50,7 @@ tsconfig.json      # Configurazione TypeScript
 - Sidebar responsive con apertura mobile (`Sheet`) e collapsible su desktop
 - Routing dinamico Home / About / Works
 - Layout persistente (Sidebar + Topbar)
-- Icone dinamiche nei menu
 - Sistema di font personalizzabile
-- Integrazione di scene 3D tramite Three.js
 - Dark mode Tailwind pronta per l'attivazione
 - Import path semplificato tramite `@/`
 
